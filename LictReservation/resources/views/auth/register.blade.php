@@ -1,60 +1,86 @@
 @extends('layouts.unauth')
 
 @section('content')
-    <div class="register-box">
-        <div class="register-logo">
-            <a href="../../index2.html"><b>LICT</b> Reservation</a>
-        </div>
+    
 
-        <div class="register-box-body">
-            <p class="login-box-msg">Register </p>
-
-            <form action="../../index.html" method="post">
-                <div class="form-group has-feedback">
-                    <input type="text" class="form-control" placeholder="Full name">
-                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                </div>
-                <div class="form-group has-feedback">
-                    <input type="email" class="form-control" placeholder="Email">
-                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-                </div>
-                <div class="form-group has-feedback">
-                    <input type="password" class="form-control" placeholder="Password">
-                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                </div>
-                <div class="form-group has-feedback">
-                    <input type="password" class="form-control" placeholder="Retype password">
-                    <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
-                </div>
-                <div class="row">
-                    <div class="col-xs-8">
-                        <div class="checkbox icheck">
-                            <label>
-                                <input type="checkbox"> I agree to the <a href="#">terms</a>
-                            </label>
+<div class="wrapper">
+        <div class="main-panel">
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-offset-1 col-md-6">
+                            <div>
+                                <h3 class="title text-center">ICTC Reservation Site</h3>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" data-background-color="purple">
+                                    <h4 class="title text-center">Register</h4>
+                                </div>
+                                <div class="card-content">
+                                    <form method="POST" action="{{ route('register') }}">
+                                        {{ csrf_field() }}
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Name </label>
+                                                    <input id="name" name="name" type="text" class="form-control" value="{{ old('name') }}" required autofocus>
+                                                    @if ($errors->has('name'))
+                                                        <span class="help-block">
+                                                            <strong>{{ $errors->first('name') }}</strong>
+                                                        </span>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Email Address</label>
+                                                    <input id="email" name="email" type="email" class="form-control" value="{{ old('email') }}" required>
+                                                    @if ($errors->has('email'))
+                                                        <span class="help-block">
+                                                            <strong>{{ $errors->first('email') }}</strong>
+                                                        </span>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Password</label>
+                                                    <input id="password" name="password" type="password" class="form-control" required>
+                                                    @if ($errors->has('password'))
+                                                        <span class="help-block">
+                                                            <strong>{{ $errors->first('password') }}</strong>
+                                                        </span>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Confirm password</label>
+                                                    <input id="password-confirm" name="password_confirmation" type="password" class="form-control" required>
+                                                    @if ($errors->has('password_confirmation'))
+                                                        <span class="help-block">
+                                                            <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                                        </span>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary pull-right">Register</button>
+                                        <div class="clearfix"></div>
+                                        <h3 class="text-center"> OR </h3>
+                                         <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Signup using Facebook</a>
+                                    </form>
+                                    <br>
+                                    <a href="{{ route('login') }}">I already have account</a>
+                                </div>
+                            </div>
                         </div>
+                        
                     </div>
-                    <!-- /.col -->
-                    <div class="col-xs-4">
-                        <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
-                    </div>
-                    <!-- /.col -->
                 </div>
-            </form>
-
-            <div class="social-auth-links text-center">
-                <p>- OR -</p>
-                <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign up using
-                    Facebook</a>
-
-            <a href="{{ route('login') }}" class="text-center">I already have a account</a>
+            </div>
         </div>
-        <!-- /.form-box -->
     </div>
-    <!-- /.register-box -->
-
-
-
 
 
 
@@ -138,8 +164,3 @@
 {{--</div>--}}
 @endsection
 
-@section('customjs')
-    <script type="text/javascript">
-        document.body.className += ' ' + 'register-page';
-    </script>
-    @endsection

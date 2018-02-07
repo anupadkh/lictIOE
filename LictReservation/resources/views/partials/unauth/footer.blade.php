@@ -1,15 +1,16 @@
-<!-- jQuery 3 -->
-<script src="{{ url('/') }}/bower_components/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="{{ url('/') }}/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- iCheck -->
-<script src="{{ url('/') }}/plugins/iCheck/icheck.min.js"></script>
-<script>
-    $(function () {
-        $('input').iCheck({
-            checkboxClass: 'icheckbox_square-blue',
-            radioClass: 'iradio_square-blue',
-            increaseArea: '20%' /* optional */
-        });
-    });
-</script>
+<!--   Core JS Files   -->
+<script src="{{ url('/') }}/assets/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script src="{{ url('/') }}/assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="{{ url('/') }}/assets/js/material.min.js" type="text/javascript"></script>
+<!--  Charts Plugin -->
+<script src="{{ url('/') }}/assets/js/chartist.min.js"></script>
+<!--  Dynamic Elements plugin -->
+<script src="{{ url('/') }}/assets/js/arrive.min.js"></script>
+<!--  PerfectScrollbar Library -->
+<script src="{{ url('/') }}/assets/js/perfect-scrollbar.jquery.min.js"></script>
+<!--  Notifications Plugin    -->
+<script src="{{ url('/') }}/assets/js/bootstrap-notify.js"></script>
+<!-- Material Dashboard javascript methods -->
+<script src="{{ url('/') }}/assets/js/material-dashboard.js?v=1.2.0"></script>
+<!-- Material Dashboard DEMO methods, don't include it in your project! -->
+<script src="{{ url('/') }}/assets/js/demo.js"></script>

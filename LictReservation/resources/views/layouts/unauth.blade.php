@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         @section('head')
             @include('partials.unauth.head')
@@ -8,7 +8,7 @@
         @section('customcss')
             @show
     </head>
-    <body class="hold-transition">
+    <body>
 
         @section('content')
         @show
