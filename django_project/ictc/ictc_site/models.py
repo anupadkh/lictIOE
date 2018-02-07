@@ -1,11 +1,15 @@
 from django.db import models
 
 # Create your models here.
-
-class Page(models.Model):
-	intro = models.ForeignKey(Content, on_delete=models.CASCADE)
-	contact = models.ForeignKey(Contact, on_delete=models.CASCADE)
-	about = models.ForeignKey(Content,on_delete=models.CASCADE)
+# Page
+# Contact
+# Address
+# Content
+# Iclass
+# Menu
+# Events
+# Social
+# Media
 
 class Contact(models.Model):
 	email = models.CharField('Email',max_length=60)
@@ -23,6 +27,11 @@ class Address(models.Model):
 	adtype = models.IntegerField('AddressType',default=1)
 	contact = models.ForeignKey(Contact, on_delete=models.CASCADE)
 
+
+class Iclass(models.Model):
+	name = models.CharField('Name',max_length=10)
+	description = models.CharField('Content',max_length=30)
+
 class Content(models.Model):
 	href = models.CharField('URL',max_length=50,default='#')
 	title = models.CharField('Title',max_length=300)
@@ -30,9 +39,10 @@ class Content(models.Model):
 	iclass = models.ForeignKey(Iclass, on_delete=models.CASCADE)
 	pub_date = models.DateTimeField('Published_Date',auto_now_add=True)
 
-class Iclass(models.Model):
-	name = models.CharField('Name',max_length=10)
-	description = models.CharField('Content',max_length=30)
+class Page(models.Model):
+	intro = models.ForeignKey(Content, on_delete=models.CASCADE, related_name='intro_content')
+	contact = models.ForeignKey(Contact, on_delete=models.CASCADE, related_name='main_content')
+	about = models.ForeignKey(Content,on_delete=models.CASCADE)
 
 class Menu(models.Model):
 	href = models.CharField('URL',max_length=30)
@@ -44,15 +54,16 @@ class Events(models.Model):
 	start_date = models.DateTimeField('Start')
 	end_date = models.DateTimeField('End')
 
-class Social(models.Model):
-	link = models.CharField('URLusername',max_length=30)
-	stype = models.ForeignKey(Media,on_delete=models.CASCADE)
-	contact = models.ForeignKey(Content,on_delete=models.CASCADE)
 
 class Media(models.Model):
 	name = models.CharField('Medianame',max_length=30)
 	url = models.CharField('URL',max_length=40)
 	fa = models.CharField('FAclass',max_length=30)
+
+class Social(models.Model):
+	link = models.CharField('URLusername',max_length=30)
+	stype = models.ForeignKey(Media,on_delete=models.CASCADE)
+	contact = models.ForeignKey(Content,on_delete=models.CASCADE)
 
 class Copyright(models.Model):
 	crendentials = models.CharField('crendentials',max_length=40)
