@@ -12,13 +12,13 @@
     <div class="sidebar-wrapper">
         <ul class="nav">
             <li class="active">
-                <a href="dashboard.html">
+                <a href="{{ route('home') }}">
                     <i class="material-icons">dashboard</i>
                     <p>Dashboard</p>
                 </a>
             </li>
             <li>
-                <a href="./user.html">
+                <a href="{{ route('reservation-index') }}">
                     <i class="material-icons">person</i>
                     <p>Reservations</p>
                 </a>

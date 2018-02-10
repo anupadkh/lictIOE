@@ -38,7 +38,7 @@
                                         <a href="#">Profile</a>
                                     </li>
                                     <li>
-                                        <a href="#">Logout</a>
+                                        <a href="{{ route('logout-user') }}">Logout</a>
                                     </li>
                                 </ul>
                             </li>
