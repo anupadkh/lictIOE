@@ -3,11 +3,13 @@
 	
 	<div class="container">
 		<div class="row">
-			<div class="slider">
+			<div class="slider" align="center">
 				<div class="img-responsive">
+					{%load static%}
 					<ul class="bxslider">
-						{%for image in images_slides%}				
-						<li><img src="{{image.href}}" alt="{{image.description}}"/></li>	{%endfor%}		
+						<li><img src="{%static "img/slider_01.jpg" class="img-responsive" alt="image_sliders"/></li>
+						<li><img src="{%static "img/slider_02.jpg" class="img-responsive" alt="image_sliders"/></li>
+						<li><img src="{%static "img/slider_03.jpg" class="img-responsive" alt="image_sliders"/></li>		
 					</ul>
 				</div>	
 			</div>
@@ -18,8 +20,8 @@
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
 				<div class="text-center">
-					<h2>{{page_intro_title}}</h2>
-					<p>{{page_intro_description}}</p>
+					<h2>Introduction</h2>
+					<p>Established in 2011 with the help of Korea International Cooperation Agency (KOICA), this Centre was established in order to conduct various types of trainings, sponsored courses and conducting problem based research in the field of engineering and technology especially in the area of information and communication technology.</p>
 				</div>
 				<hr>
 			</div>
@@ -27,28 +29,52 @@
 	</div>
 	
 	<div class="container">
-
 		<div class="row">
-
 			<div class="box">
-				{% for content in page_content %}
 				<div class="col-md-4">
 					<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
-						<h4>{{content.title}}</h4>					
+						<h4>Trainings</h4>					
 							<div class="icon">
-								<i class="{{content.iclass}}"></i>
+								<i class="fa fa-bar-chart-o fa-3x"></i>
 							</div>						
-						<p>{{content.excerpt}}</p>
+						<p>ICTC conducts both long term and short-term training courses related with current ICT trends. All training courses that are less than 3 months duration are termed as 'Short'</p>
 						<div class="ficon">
-							<a href="{{content.href}}" class="btn btn-default" role="button">Read more</a>
+							<a href="#" class="btn btn-default" role="button">Read more</a>
 						</div>
 					</div>
 				</div>
-				{% endfor %}
 				
+				<div class="col-md-4">
+					<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1.0s">
+						<h4>Laboratories</h4>
+						<div class="icon">
+							<i class="fa fa-desktop fa-3x"></i>
+						</div>
+						<p>ICTC has 9 Laboratories, with 30 computers in each lab for exam conduction, trainings and ICT-related lab purposes.</p>
+						<div class="ficon">
+							<a href="#" class="btn btn-default" role="button">Read more</a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-4">
+					<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1.6s">
+						<h4>Easy Reservations</h4>
+						<div class="icon">
+							<i class="fa fa-location-arrow fa-3x"></i>
+						</div>
+						<p>Give us a call, or make reservations from the link <a href="comingsoon.html">Reservations</a> in the menu.</p>
+						<div class="ficon">
+							<a href="#" class="btn btn-default" role="button">Read more</a>
+						</div>
+					</div>
+					
+				</div>
 				
 			</div>
 		</div>
 	</div>
+
+
 	
 {% include 'partial/footer.html' %}

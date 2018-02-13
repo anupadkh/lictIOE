@@ -8,8 +8,8 @@
 
     <!-- Bootstrap -->
     {%load static%}
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="{% static 'css/animate.css'%}">
+    <link href="{% static "css/bootstrap.min.css"%}" rel="stylesheet">
+	<link rel="stylesheet" href="{% static "css/animate.css"%}">
 	<link rel="stylesheet" href="{% static "css/font-awesome.min.css"%}">
 	<link rel="stylesheet" href="{% static "css/jquery.bxslider.css"%}">
 	<link rel="stylesheet" type="text/css" href="{% static "css/normalize.css"%}" />
@@ -40,9 +40,11 @@
 			<div class="navbar-collapse collapse">							
 				<div class="menu">
 					<ul class="nav nav-tabs" role="tablist">
-						{%for menu in menu_list%}
-						<li role="presentation" class="{{menu.active}}"><a href="{{menu.href}}">{{menu.title}}</a></li>	
-						{%endfor%}
+						<li role="presentation"><a href="index.html">Home</a></li>
+                        <li role="presentation"><a href="gallery.html">Gallery</a></li>
+                        <li role="presentation"><a href="comingsoon.html">Reservations</a></li>             
+                        <li role="presentation"><a href="comingsoon.html">Events</a></li>
+                        <li role="presentation"><a href="comingsoon.html">Contact us</a></li>
 					</ul>
 				</div>
 			</div>			

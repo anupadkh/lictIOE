@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('ictc_site/', include('ictc_site.urls')),
 
+
 ]
