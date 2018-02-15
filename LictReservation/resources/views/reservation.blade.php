@@ -1,6 +1,7 @@
 @extends('layouts.auth')
 
 @section('customcss')
+    <link href="{{ url('/') }}/css/jquery.datepick.css" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -39,9 +40,9 @@
                                                             <strong>{{ $errors->first('date') }}</strong>
                                                         </span>
                                         @endif
-                                        <div class="form-group label-floating">
+                                        <div class="form-group ">
                                             <label class="control-label">Date</label>
-                                            <input id="date" name="date" type="date" class="form-control" value="{{ old('date') }}" required>
+                                            <input id="date" name="date" class="form-control" value="{{ old('date') }}" required>
                                         </div>
                                     </div>
 
@@ -84,4 +85,10 @@
 @endsection
 
 @section('customjs')
+    <script src="{{ url('/') }}/js/jquery.plugin.min.js"></script>
+    <script src="{{ url('/') }}/js/jquery.datepick.js"></script>
+
+    <script type="text/javascript">
+        $('#date').datepick();
+    </script>
 @endsection
