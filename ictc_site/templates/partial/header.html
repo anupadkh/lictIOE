@@ -40,11 +40,16 @@
 			<div class="navbar-collapse collapse">							
 				<div class="menu">
 					<ul class="nav nav-tabs" role="tablist">
-						<li role="presentation"><a href="index.html">Home</a></li>
-                        <li role="presentation"><a href="gallery.html">Gallery</a></li>
-                        <li role="presentation"><a href="comingsoon.html">Reservations</a></li>             
-                        <li role="presentation"><a href="comingsoon.html">Events</a></li>
-                        <li role="presentation"><a href="comingsoon.html">Contact us</a></li>
+						{% url 'index' as index %}
+						{% url 'gallery' as gallery %}
+						{% url 'reservations' as reservations %}
+						{% url 'events' as events %}
+						{% url 'caontact' as contact %}
+						<li role="presentation" {% if request.path == index %} class="active" {% endif %}><a href="{% url 'index' %}">Home</a></li>
+                        <li role="presentation" {% if request.path == gallery %} class="active" {% endif %}><a href="{% url 'gallery' %}">Gallery</a></li>
+                        <li role="presentation" {% if request.path == reservations %} class="active" {% endif %}><a href="{% url 'reservations' %}">Reservations</a></li>             
+                        <li role="presentation" {% if request.path == events %} class="active" {% endif %}><a href="{% url 'events' %}">Events</a></li>
+                        <li role="presentation" {% if request.path == contact %} class="active" {% endif %}><a href="{% url 'contact' %}">Contact us</a></li>
 					</ul>
 				</div>
 			</div>			

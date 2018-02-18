@@ -20,7 +20,30 @@ def blog(request):
     return render(request, 'blog.html', context)
 
 def gallery(request):    
+    items = ['item1', 'item2', 'item3','item4']
     context = {
+        'items': items,
         'page_title': 'ICTC Gallery'
     }
     return render(request, 'gallery.html', context)
+
+def events(request):
+    items = ['item1', 'item2', 'item3','item4']
+    context = {
+        'items': items
+    }
+    return render(request, 'events.html', context)
+
+def reservations(request):
+    items = ['item1', 'item2', 'item3','item4']
+    context = {
+        'items': items
+    }
+    return render(request, 'reservations.html', context)
+
+def contact(request):
+    items = ['item1', 'item2', 'item3','item4']
+    context = {
+        'items': items
+    }
+    return render(request, 'contact.html', context)
