@@ -44,7 +44,7 @@
 						{% url 'gallery' as gallery %}
 						{% url 'reservations' as reservations %}
 						{% url 'events' as events %}
-						{% url 'caontact' as contact %}
+						{% url 'contact' as contact %}
 						<li role="presentation" {% if request.path == index %} class="active" {% endif %}><a href="{% url 'index' %}">Home</a></li>
                         <li role="presentation" {% if request.path == gallery %} class="active" {% endif %}><a href="{% url 'gallery' %}">Gallery</a></li>
                         <li role="presentation" {% if request.path == reservations %} class="active" {% endif %}><a href="{% url 'reservations' %}">Reservations</a></li>             
