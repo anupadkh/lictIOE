@@ -1,0 +1,138 @@
+{% include 'header.html' %}
+  <body>
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse.collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html"><span>ICTC</span></a>
+			</div>
+			<div class="navbar-collapse collapse">							
+				<div class="menu">
+					<ul class="nav nav-tabs" role="tablist">
+						{% for menu in menu_list%}
+						<li role="presentation" class="{{menu.active}}"><a href="{{menu.href}}">{{menu.title}}</a></li>	
+						{% endfor %}
+					</ul>
+				</div>
+			</div>			
+		</div>
+	</nav>
+	
+	
+	<div class="container">
+		<div class="row">
+			<div class="slider">
+				<div class="img-responsive">
+					<ul class="bxslider">
+						{% for image in images_slides%}				
+						<li><img src="{{image.href}}" alt="{{image.description}}"/></li>	{% endfor %}		
+					</ul>
+				</div>	
+			</div>
+		</div>
+	</div>
+		
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<div class="text-center">
+					<h2>{{page_intro_title}}</h2>
+					<p>{{page_intro_description}}</p>
+				</div>
+				<hr>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container">
+
+		<div class="row">
+
+			<div class="box">
+				{% for content in page_content %}
+				<div class="col-md-4">
+					<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.4s">
+						<h4>{{content.title}}</h4>					
+							<div class="icon">
+								<i class="fa {{content.iclass}} fa-3x"></i>
+							</div>						
+						<p>{{content.excerpt}}</p>
+						<div class="ficon">
+							<a href="{{content.href}}" class="btn btn-default" role="button">Read more</a>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+				
+				
+			</div>
+		</div>
+	</div>
+	
+	
+	<footer>
+		<div class="inner-footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 f-about">
+						<a href="index.html"><h1><span>e</span>{{page_about_title}}</h1></a>
+						<p>{{page_about_description}}
+						</p>
+					</div>
+					<div class="col-md-4 l-posts">
+						<h3 class="widgetheading">Events</h3>
+						<ul>
+							{% for event in events %}
+							<li><a href="{{event.href}}">{{events.description}}</a></li>
+							{% endfor %}
+							
+						</ul>
+					</div>
+					<div class="col-md-4 f-contact">
+						<h3 class="widgetheading">Stay in touch</h3>
+						<a href="#"><p><i class="fa fa-envelope"></i> {{ictc.email}}</p></a>
+						<p><i class="fa fa-phone"></i>  {{ictc.phone}}</p>
+						<p><i class="fa fa-home"></i> {{ictc.address}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="last-div">
+			<div class="container">
+				<div class="row">
+					<div class="copyright">
+						© {{copyright.year}} {{copyright.credentials}} | <a target="_blank" href="{{copyright.url}}">{{copyright.title}}</a>
+					</div>	
+                    <!-- 
+                        All links in the footer should remain intact. 
+                        Licenseing information is available at: http://bootstraptaste.com/license/
+                        You can buy this theme without footer links online at: http://bootstraptaste.com/buy/?theme=eNno
+                    -->				
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<ul class="social-network">
+						{% for sm in social %}
+						<li><a href="{{sm.link}}" data-placement="top" title="sm.stype"><i class="sm.fa"></i></a></li>
+						<!-- <li><a href="{{ictc.twitter}}" data-placement="top" title="Twitter"><i class="fa fa-twitter fa-1x"></i></a></li> -->
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+			
+			<a href="" class="scrollup"><i class="fa fa-chevron-up"></i></a>	
+				
+			
+		</div>	
+	</footer>
+	
+{% include "footer.html" %}

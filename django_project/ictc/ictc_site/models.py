@@ -34,7 +34,7 @@ class Iclass(models.Model):
 	name = models.CharField('Name',max_length=10)
 	description = models.CharField('Content',max_length=30)
 	def __str__(self):
-		return self.name
+		return self.description
 
 class Content(models.Model):
 	href = models.CharField('URL',max_length=50,default='#')
