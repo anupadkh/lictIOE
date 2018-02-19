@@ -23,9 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'gl-am3sf&=te1wa59k!y(k4(gaf93$lllx=)9iq9udjcagp#6r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = 0
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1',]
 
 
 # Application definition
@@ -119,20 +120,20 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
+if DEBUG:
+    MEDIA_URL = '/media/'
+    STATIC_ROOT = os.path.join(BASE_DIR, "static", "static")
+    MEDIA_ROOT = os.path.join(BASE_DIR, "static", "media/")
+    STATICFILES_DIRS = (
+        os.path.join(BASE_DIR, "static"),
+        'ictc_site/static',
+        )
 
 STATIC_URL = '/static/'
-#STATIC_ROOT = os.path.join(BASE_DIR, "ictc", "static/")
+STATIC_ROOT = os.path.join(BASE_DIR, "static", "static/")
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     'ictc_site/static',
-
 ]
 
-if DEBUG:
-    MEDIA_URL = '/media/'
-    STATIC_ROOT = os.path.join(BASE_DIR, "static", "static-only/")
-    MEDIA_ROOT = os.path.join(BASE_DIR, "static","media/")
-    STATICFILES_DIRS = (
-        os.path.join(BASE_DIR, "static", "static"),
-        )

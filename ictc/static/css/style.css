@@ -107,10 +107,17 @@ a.navbar-brand span {
 	
 }
 .bxslider li {
-	margin-left:40px;
+	margin-left:40px;    /*626,439*/
+  align-items: center;
+  
 
 }
 
+.bxslider img {
+  max-height: 439px;
+  max-width: 626px;
+
+}
 .content {
 	margin-top:20px;
 }
