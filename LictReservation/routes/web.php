@@ -26,3 +26,5 @@ Route::get('auth/{provider}/callback', 'SocialController@handleProviderCallback'
 
 Route::get('/reservation', 'ReservationController@index')->name('reservation-index');
 Route::post('/reservation', 'ReservationController@add')->name('post-reservation');
+Route::get('/reservation/approve/{id}', 'ReservationController@approve')->name('approve-reservation');
+Route::get('/reservation/decline/{id}', 'ReservationController@decline')->name('decline-reservation');

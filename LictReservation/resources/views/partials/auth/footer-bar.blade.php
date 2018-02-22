@@ -20,4 +20,24 @@
         demo.initDashboardPageCharts();
 
     });
+
+    @if(Session::get('data'))
+        <?php
+            $data   =   Session::get('data');
+            Session::forget('data');
+        ?>
+        color = Math.floor((Math.random() * 4) + 1);
+
+        $.notify({
+            icon: "notifications",
+            message: "{{ $data['message'] }}"
+        }, {
+            type: type[color],
+            timer: 4000,
+            placement: {
+                from: 'top',
+                align: 'right'
+            }
+        });
+    @endif
 </script>

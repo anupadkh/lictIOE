@@ -26,11 +26,57 @@ class Reservations extends Model
         $entry  =   new static();
 
         $entry->user_id     =   $user_id;
-        $entry->hall_id     =   $options['hall_id'];
+        $entry->hall_id     =   $options['hall'];
         $entry->date     =   $options['date'];
         $entry->from     =   $options['from'];
         $entry->to     =   $options['to'];
 
+        $entry->save();
+        return $entry;
+    }
+
+    /**
+     *
+     * Return list of reservations
+     *
+     * @param $user_id
+     * @return mixed
+     */
+    public  function getReservations($user_id){
+        return $this->where('user_id', $user_id)->orderBy('created_at', 'DESC')->get();
+    }
+
+    /**
+     * Get all reservations for user
+     *
+     * @return mixed
+     * */
+    public function getAllReservations(){
+        return $this->orderBy('created_at', 'DESC')->get();
+    }
+
+    /**
+     * Approve the reservation
+     *
+     * @param $id
+     * @return mixed
+     * */
+    public  function approveReservation($id){
+        $entry   =  $this->where('id', $id)->first();
+        $entry->status = 1;
+        $entry->save();
+        return $entry;
+    }
+
+    /**
+     * Decline the reservation
+     *
+     * @param $id
+     * @return mixed
+     * */
+    public  function declineReservation($id){
+        $entry   =  $this->where('id', $id)->first();
+        $entry->status = 2;
         $entry->save();
         return $entry;
     }

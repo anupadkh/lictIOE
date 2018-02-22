@@ -20,26 +20,25 @@
                                         {{ csrf_field() }}
                                         <div class="row">
                                             <div class="col-md-12">
+                                                @if($errors->has('email'))
+                                                    <span class="help-block">
+                                                            <strong>{{ $errors->first('email') }}</strong>
+                                                        </span>
+                                                @endif
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Email Address</label>
                                                     <input type="email" class="form-control" name="email"  value="{{ old('email') }}" required autofocus>
-
-                                                    @if($errors->has('email'))
-                                                        <span class="help-block">
-                                                            <strong>{{ $errors->first('email') }}</strong>
-                                                        </span>
-                                                    @endif
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
+                                                @if($errors->has('password'))
+                                                    <span class="help-block">
+                                                            <strong>{{ $errors->first('password') }}</strong>
+                                                        </span>
+                                                @endif
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Password</label>
                                                     <input type="password" class="form-control" name="password" value="{{ old('password') }}" required>
-                                                    @if($errors->has('password'))
-                                                        <span class="help-block">
-                                                            <strong>{{ $errors->first('password') }}</strong>
-                                                        </span>
-                                                    @endif
                                                 </div>
                                             </div>
                                         </div>

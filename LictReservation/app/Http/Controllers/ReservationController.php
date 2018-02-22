@@ -7,6 +7,8 @@ use App\Reservations;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use Validator;
+
 class ReservationController extends Controller
 {
     //
@@ -30,12 +32,45 @@ class ReservationController extends Controller
      * */
     public  function add(){
         try{
+            $validator  =   Validator::make($this->request->all(), [
+                'hall'     =>  'required|max:55',
+                'date'     =>  'required|date|after:'.date('Y-m-d'),
+                'from'     =>  'required|after:'.date('h:i A'),
+                'to'       =>  'required|after:'.date('h:i A')
+            ]);
+
+            if($validator->fails()){
+                return redirect()->back()
+                    ->withErrors($validator)
+                    ->withInput($this->request->all());
+            }
+
             $user_id    =   Auth::user()->id;
             $entry   =  $this->reservations->createReservation($user_id, $this->request->all());
-            return $entry;
+            return redirect()->route('home')->with('data', sendHttpResponse('', "Reservation added successfully", 200));
         }
         catch(\Exception $e){
+            return $e->getMessage()." on line ".$e->getLine()." in file ".$e->getFile();
+        }
+    }
 
+    public  function  approve($id){
+        try{
+            $entry   =  $this->reservations->approveReservation($id);
+            return redirect()->route('home')->with('data', sendHttpResponse('', "Reservation approved successfully", 200));
+        }
+        catch(\Exception $e){
+            return $e->getMessage()." on line ".$e->getLine()." in file ".$e->getFile();
+        }
+    }
+
+    public function decline($id){
+        try{
+            $entry   =  $this->reservations->declineReservation($id);
+            return redirect()->route('home')->with('data', sendHttpResponse('', "Reservation declined successfully", 200));
+        }
+        catch(\Exception $e){
+            return $e->getMessage()." on line ".$e->getLine()." in file ".$e->getFile();
         }
     }
 }
