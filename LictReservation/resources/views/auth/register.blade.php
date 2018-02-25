@@ -21,47 +21,61 @@
                                         {{ csrf_field() }}
                                         <div class="row">
                                             <div class="col-md-12">
+                                                @if ($errors->has('name'))
+                                                    <span class="help-block">
+                                                        <strong>{{ $errors->first('name') }}</strong>
+                                                    </span>
+                                                @endif
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Name </label>
-                                                    <input id="name" name="name" type="text" class="form-control" value="{{ old('name') }}" required autofocus>
-                                                    @if ($errors->has('name'))
-                                                        <span class="help-block">
-                                                            <strong>{{ $errors->first('name') }}</strong>
-                                                        </span>
-                                                    @endif
+                                                    <input id="name" name="name" type="text" class="form-control" value="{{ old('name') }}" autofocus>
+
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
+                                                @if ($errors->has('email'))
+                                                    <span class="help-block">
+                                                            <strong>{{ $errors->first('email') }}</strong>
+                                                        </span>
+                                                @endif
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Email Address</label>
                                                     <input id="email" name="email" type="email" class="form-control" value="{{ old('email') }}" required>
-                                                    @if ($errors->has('email'))
-                                                        <span class="help-block">
-                                                            <strong>{{ $errors->first('email') }}</strong>
-                                                        </span>
-                                                    @endif
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
+                                                @if ($errors->has('mobile'))
+                                                    <span class="help-block">
+                                                            <strong>{{ $errors->first('mobile') }}</strong>
+                                                        </span>
+                                                @endif
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Contact Number</label>
+                                                    <input id="mobile" name="mobile" type="tel" class="form-control" value="{{ old('mobile') }}" required>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                @if ($errors->has('password'))
+                                                    <span class="help-block">
+                                                            <strong>{{ $errors->first('password') }}</strong>
+                                                        </span>
+                                                @endif
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Password</label>
                                                     <input id="password" name="password" type="password" class="form-control" required>
-                                                    @if ($errors->has('password'))
-                                                        <span class="help-block">
-                                                            <strong>{{ $errors->first('password') }}</strong>
-                                                        </span>
-                                                    @endif
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
+                                                @if ($errors->has('password_confirmation'))
+                                                    <span class="help-block">
+                                                            <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                                        </span>
+                                                @endif
                                                 <div class="form-group label-floating">
                                                     <label class="control-label">Confirm password</label>
                                                     <input id="password-confirm" name="password_confirmation" type="password" class="form-control" required>
-                                                    @if ($errors->has('password_confirmation'))
-                                                        <span class="help-block">
-                                                            <strong>{{ $errors->first('password_confirmation') }}</strong>
-                                                        </span>
-                                                    @endif
+
                                                 </div>
                                             </div>
                                         </div>
