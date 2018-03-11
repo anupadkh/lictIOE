@@ -8,7 +8,7 @@
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-offset-1 col-md-6">
+                        <div class="col-md-offset-2 col-md-6 col-sm-offset-3 col-sm-6">
                             <div>
                                 <h3 class="title text-center">ICTC Reservation Site</h3>
                             </div>
@@ -82,7 +82,12 @@
                                         <button type="submit" class="btn btn-primary pull-right">Register</button>
                                         <div class="clearfix"></div>
                                         <h3 class="text-center"> OR </h3>
-                                         <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Signup using Facebook</a>
+                                        <div class="row">
+                                            <div class="col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6">
+                                                <a href="{{ url('/auth/facebook') }}" class="btn btn-facebook"><i class="fa fa-facebook"></i> Facebook</a>
+                                                <a href="{{ url('/auth/twitter') }}" class="btn btn-twitter"><i class="fa fa-twitter"></i> Twitter</a>
+                                            </div>
+                                        </div>
                                     </form>
                                     <br>
                                     <a href="{{ route('login') }}">I already have account</a>

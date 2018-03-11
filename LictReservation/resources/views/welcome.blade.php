@@ -68,23 +68,234 @@
         
         <div class="content">
             <h4 class="motto">Reserve the halls of ICT</h4>
-            <!-- <div class="subscribe">
+            <div class="subscribe">
                 <h5 class="info-text">
-                    Join the waiting list for the beta. We keep you posted. 
+                    Price list
                 </h5>
                 <div class="row">
                     <div class="col-md-4 col-md-offset-4 col-sm6-6 col-sm-offset-3 ">
-                        <form class="form-inline" role="form">
-                          <div class="form-group">
-                            <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                            <input type="email" class="form-control transparent" placeholder="Your email here...">
-                          </div>
-                          <button type="submit" class="btn btn-danger btn-fill">Notify Me</button>
-                        </form>
+                        <table class="table table-responsive primary" style="color: white;">
+                            <thead>
+                                <th>Item</th>
+                                <th>Details</th>
+                                <th>Price</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Conference Room</td>
+                                    <td>
+                                        <span>First floor</span>
+                                    </td>
+                                    <td>
+                                        <span>Rs.10,500 (Per Day)</span><br>
+                                        <span>Rs. 1,500 (Per Hour)</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Meeting Room </td>
+                                    <td>
+                                        <span>First floor</span>
+                                    </td>
+                                    <td>
+                                        <span>Rs.5,000 (Per Day)</span><br>
+                                        <span>Rs. 1,000 (Per Hour)</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Lecture 1 </td>
+                                    <td>
+                                        <span>First floor</span>
+                                    </td>
+                                    <td>
+                                        <span>Rs.10,500 (Per Day)</span><br>
+                                        <span>Rs. 1,500 (Per Hour)</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Lecture 2 </td>
+                                    <td>
+                                        <span>First floor</span>
+                                    </td>
+                                    <td>
+                                        <span>Rs.10,500 (Per Day)</span><br>
+                                        <span>Rs. 1,500 (Per Hour)</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Lecture 3 </td>
+                                    <td>
+                                        <span>First floor</span>
+                                    </td>
+                                    <td>
+                                        <span>Rs.10,500 (Per Day)</span><br>
+                                        <span>Rs. 1,500 (Per Hour)</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Lecture 4 </td>
+                                    <td>
+                                        <span>First floor</span>
+                                    </td>
+                                    <td>
+                                        <span>Rs.10,500 (Per Day)</span><br>
+                                        <span>Rs. 1,500 (Per Hour)</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Computer 1</td>
+                                    <td>
+                                        <span>Second floor</span>
+                                    </td>
+                                    <td>
+                                        <span>Rs.18,000 (Per Day)</span><br>
+                                        <span>Rs. 600 (Per Computer)</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Computer 2</td>
+                                    <td>
+                                        <span>Second floor</span>
+                                    </td>
+                                    <td>
+                                        <span>Rs.18,000 (Per Day)</span><br>
+                                        <span>Rs. 600 (Per Computer)</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Computer 3</td>
+                                    <td>
+                                        <span>Second floor</span>
+                                    </td>
+                                    <td>
+                                        <span>Rs.18,000 (Per Day)</span><br>
+                                        <span>Rs. 600 (Per Computer)</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Computer 4</td>
+                                    <td>
+                                        <span>Second floor</span>
+                                    </td>
+                                    <td>
+                                        <span>Rs.18,000 (Per Day)</span><br>
+                                        <span>Rs. 600 (Per Computer)</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Computer 5</td>
+                                    <td>
+                                        <span>Third floor</span>
+                                    </td>
+                                    <td>
+                                        <span>Rs.18,000 (Per Day)</span><br>
+                                        <span>Rs. 600 (Per Computer)</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Computer 6</td>
+                                    <td>
+                                        <span>Third floor</span>
+                                    </td>
+                                    <td>
+                                        <span>Rs.18,000 (Per Day)</span><br>
+                                        <span>Rs. 600 (Per Computer)</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Language Lab</td>
+                                    <td>
+                                        <span>Third floor</span>
+                                    </td>
+                                    <td>
+                                        <span>Rs.18,000 (Per Day)</span><br>
+                                        <span>Rs. 600 (Per Computer)</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Lecture 5</td>
+                                    <td>
+                                        <span>Third floor</span>
+                                    </td>
+                                    <td>
+                                        <span>Rs.18,000 (Per Day)</span><br>
+                                        <span>Rs. 600 (Per Computer)</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Seminar 1</td>
+                                    <td>
+                                        <span>Fourth floor</span>
+                                    </td>
+                                    <td>
+                                        <span>Rs.7,500 (Per Day)</span><br>
+                                        <span>Rs. 1,200 (Per Hour)</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Seminar 2</td>
+                                    <td>
+                                        <span>Fourth floor</span>
+                                    </td>
+                                    <td>
+                                        <span>Rs.7,500 (Per Day)</span><br>
+                                        <span>Rs. 1,200 (Per Hour)</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Cafeteria</td>
+                                    <td>
+                                        <span></span>
+                                    </td>
+                                    <td>
+                                        <span>Rs.5,600 (Per Day)</span><br>
+                                        <span>Rs. 800 (Per Hour)</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Generator</td>
+                                    <td>
+                                        <span></span>
+                                    </td>
+                                    <td>
+                                        <span>30 Liter per hour( Price according to market price)</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>LED Display Board</td>
+                                    <td>
+                                        <span></span>
+                                    </td>
+                                    <td>
+                                        <span>Rs. 2000 per 24 hours </span>
+                                    </td>
+                                </tr>
+
+
+
+                            </tbody>
+                        </table>
 
                     </div>
                 </div>
-            </div> -->
+            </div>
         </div>
     </div>
     <div class="footer">

@@ -7,7 +7,7 @@
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-offset-1 col-md-6">
+                        <div class="col-md-offset-2 col-md-6 col-sm-offset-3 col-sm-6">
                             <div>
                                 <h3 class="title text-center">ICTC Reservation Site</h3>
                             </div>
